@@ -1246,7 +1246,7 @@
                                                                                 <div class="avatar-image avatar-sm">
                                                                                     <img src="{{ asset('dashboard_assets') }}/images/avatar/1.png" alt="" class="img-fluid" />
                                                                                 </div>
-                                                                                <a href="javascript:void(0);" class="fs-12">Alexandra Della</a>
+                                                                                <a href="javascript:void(0);" class="fs-12">{{ Auth::user()->name }}</a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1797,8 +1797,8 @@
                                                 <img src="{{ asset('dashboard_assets') }}/images/avatar/1.png" alt="" class="img-fluid" />
                                             </div>
                                             <div>
-                                                <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Alexandra Della</a>
-                                                <p class="fs-11 text-muted mb-0">alex.della@outlook.com</p>
+                                                <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">{{ Auth::user()->name }}</a>
+                                                <p class="fs-11 text-muted mb-0">{{ Auth::user()->email}}</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0);" class="avatar-text avatar-md">
@@ -2118,8 +2118,8 @@
                                 <div class="d-flex align-items-center">
                                     <img src="{{ asset('dashboard_assets') }}/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar" />
                                     <div>
-                                        <h6 class="text-dark mb-0">Alexandra Della <span class="badge bg-soft-success text-success ms-1">PRO</span></h6>
-                                        <span class="fs-12 fw-medium text-muted">alex.della@outlook.com</span>
+                                        <h6 class="text-dark mb-0">{{ Auth::user()->name }} <span class="badge bg-soft-success text-success ms-1">PRO</span></h6>
+                                        <span class="fs-12 fw-medium text-muted">{{ Auth::user()->email}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -2345,16 +2345,16 @@
             <div class="main-content">
                 <div class="row">
                     <!-- [Invoices Awaiting Payment] start -->
-                    <div class="col-xxl-3 col-md-6">
+                    <div class="col-lg-12">
                         <div class="card stretch stretch-full">
                             <div class="card-body">
-                                @yield()
+                                @yield('content')
                             </div>
                         </div>
                     </div>
                     <!-- [Invoices Awaiting Payment] end -->
                     <!-- [Converted Leads] start -->
-                    
+
                     <!--! END: [Team Progress] !-->
                 </div>
             </div>
